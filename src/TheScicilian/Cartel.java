@@ -7,13 +7,12 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class Cartel {
     private String name;
-
     private ProductFactory supplier;
     private ArrayList<Client> blacklist = new ArrayList<>();
     private long money = 0;
 
     public Cartel(){
-        this.supplier = new MerchFactory();
+        this.supplier = new MerchFactory(this);
     }
 
     public static void main(String args[]){
@@ -26,8 +25,17 @@ public class Cartel {
         name = s.nextLine();
         System.out.println("How much money are you starting with?");
         money = s.nextLong();
+        int copOrRobber;
+        System.out.println("Cop [0] or robber [1]?");
+        copOrRobber = s.nextInt();
+        Client user;
+        if(copOrRobber == 0){
+            user = new Agent(name, money);
+        }else{
+            user = new Client(name, money);
+        }
+
         //================ Here we can change to a different version of Client ================
-        Client user = new Client(name, money);
         //=======================================================================================
         System.out.println("Welcome! You are " + user);
         s.reset();
@@ -49,6 +57,14 @@ public class Cartel {
 
     }
 
+    public void report(Agent a){
+        blacklist.add(a);
+        //Burn the place down!
+        this.supplier = null;
+        this.money = 0;
+        this.blacklist = null;
+    }
+
     /**
      * Try to sell merchandise to the buyer, blacklist them if they do not have the money!
      * @param c the client buying
@@ -68,6 +84,12 @@ public class Cartel {
             c.injureSelf((int) toSell.getCost());
             return false;
         }
+
+
+    }
+
+    public String toString(){
+        return "The cartel " + name + " who has " + money + " dollars, give or take and " + blacklist.size() + " people on the blacklist";
     }
 
 }
