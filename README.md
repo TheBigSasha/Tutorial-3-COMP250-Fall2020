@@ -1,6 +1,6 @@
-# COMP250 Fall 2020 Tutorial 2
+# COMP250 Fall 2020 Tutorial 3
 
-## Write some code for the mafia
+## Help the police catch the Pizza mafia
 Try to write the code in the master branch and then checkout the Solved branch in order to see how I solved the problem!
 
 ## Install instructions
