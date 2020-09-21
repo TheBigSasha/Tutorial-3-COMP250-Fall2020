@@ -14,6 +14,6 @@ public class Pizza extends Product{
 
     @Override
     protected String getName() {
-        return "pizza pie! Very legal";
+        return "pizza pie";
     }
 }
