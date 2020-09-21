@@ -1,10 +1,10 @@
 package TheScicilian;
 
 public class Pizza extends Product{
-    private static final long cost = 15;
 
     public Pizza(Cartel c) {
         super(c);
+        this.setCost(15);
     }
 
     @Override

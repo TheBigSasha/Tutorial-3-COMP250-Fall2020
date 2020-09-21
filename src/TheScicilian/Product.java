@@ -1,20 +1,24 @@
 package TheScicilian;
 
 public abstract class Product {
-    private static final long cost = 0;
+    private long cost = 0;
     protected boolean legal = true;
 
     public Cartel getSupplier() {
         return supplier;
     }
 
+    protected void setCost(long cost) {
+        this.cost = cost;
+    }
+
     private Cartel supplier;
 
-    public Product(Cartel supplier){
+    public Product(Cartel supplier) {
         setSupplier(supplier);
     }
 
-    public long getCost(){
+    public long getCost() {
         return cost;
     }
 

@@ -18,6 +18,6 @@ public class IllegalPizza extends Pizza implements Illegal{
     }
 
     public String toString(){
-        return super.toString() + " is actually illegal :p ";
+        return super.toString() + " is secretly illegal :p ";
     }
 }
