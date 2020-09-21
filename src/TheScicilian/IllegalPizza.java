@@ -6,6 +6,12 @@ public class IllegalPizza extends Pizza implements Illegal{
         this.legal = false;
     }
 
+    //This one is sneaky!
+    public IllegalPizza(Cartel c, boolean sneaky){
+        super(c);
+        this.legal = sneaky;    //Claims its legal if its sneaky!
+    }
+
     @Override
     public String commitCrime() {
         return "I dislike bubble tea.";
