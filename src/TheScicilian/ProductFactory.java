@@ -1,7 +1,7 @@
 package TheScicilian;
 
 public abstract  class ProductFactory<E extends Product> {
-    private Cartel source;
+    private final Cartel source;
 
     public ProductFactory(Cartel c){
         this.source = c;
@@ -14,6 +14,7 @@ public abstract  class ProductFactory<E extends Product> {
     }
 
     public Cartel getSource() {
+        Pizza p = new Pizza(null);
         return source;
     }
 }

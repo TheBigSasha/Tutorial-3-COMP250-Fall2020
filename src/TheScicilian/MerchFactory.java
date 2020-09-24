@@ -3,7 +3,7 @@ package TheScicilian;
 import java.util.Random;
 
 public class MerchFactory extends ProductFactory<Pizza>{
-    private Random rand;
+    private final Random rand;
     public MerchFactory(Cartel c){
         super(c);
         rand = new Random();
@@ -14,7 +14,7 @@ public class MerchFactory extends ProductFactory<Pizza>{
         if(rand.nextBoolean()) {
             return new Pizza(getSource());
         }else{
-            return new IllegalPizza(getSource());
+            return new IllegalPizza(getSource(), true);
         }
     }
 

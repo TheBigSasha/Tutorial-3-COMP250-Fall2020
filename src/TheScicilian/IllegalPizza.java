@@ -1,13 +1,13 @@
 package TheScicilian;
 
-public class IllegalPizza extends Pizza implements Illegal{
-    public IllegalPizza(Cartel c){
+public class IllegalPizza extends Pizza implements Illegal {
+    public IllegalPizza(Cartel c) {
         super(c);
         this.legal = false;
     }
 
     //This one is sneaky!
-    public IllegalPizza(Cartel c, boolean sneaky){
+    public IllegalPizza(Cartel c, boolean sneaky) {
         super(c);
         this.legal = sneaky;    //Claims its legal if its sneaky!
     }
